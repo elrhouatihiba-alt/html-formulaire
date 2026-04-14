@@ -44,6 +44,7 @@ if ($_SERVER["REQUEST_METHOD"]==="POST"):
 endif;
 
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -52,6 +53,16 @@ endif;
 <title>Document</title>
 </head>
 <body>
+        <?php if (!empty($erreurs)&& $_SERVER['REQUEST_METHOD']==="POST"):
+        ?>
+
+        <ul class="erreurs">
+            <?php foreach($erreurs as $e):?>
+                <li><?php echo $e;?></li>
+            <?php endforeach;?>
+        </ul>
+
+        <?php endif; ?>
         <div class="container">
             <form action="candidature.php" method="POST">
 
