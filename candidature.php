@@ -67,15 +67,15 @@ endif;
             <form action="candidature.php" method="POST">
 
                 <label for="prenom">Prénom:</label>
-                <input type="text" id="prenom" name="prenom"  placeholder="Saisissez votre prénom">
+                <input type="text" id="prenom" name="prenom" value="<?php echo $prenom; ?>" placeholder="Saisissez votre prénom">
                 
                 <label for="nom">Nom:</label>
-                <input type="text" name="nom" id="nom"  placeholder="Saisissez votre nom">
+                <input type="text" name="nom" id="nom"  value="<?php echo $nom; ?>" placeholder="Saisissez votre nom">
 
                 <label for="age">Age:</label>
-                <input type="number" name="age" id="age" placeholder="Saisissez votre âge">
+                <input type="number" name="age" id="age" value="<?php echo $age; ?>" placeholder="Saisissez votre âge">
 
-                <label for="filiere">Filière:</label>
+                 <label for="filiere">Filière:</label>
 
                 <select name="filiere" id="filiere">
 
@@ -83,40 +83,51 @@ endif;
 
                     <option value='Informatique'
                     >
+                        <?php echo ($filiere === 'Informatique') ? 'selected' : ''; ?>>
                         Informatique
                         
                     </option>
 
                     <option value="Electronique"
                     >
+                        <?php echo ($filiere === 'Electronique') ? 'selected' : ''; ?>>
                         Electronique
 
                     </option>
 
                     <option value="Mecanique"
                     >
+                        <?php echo ($filiere === 'Mecanique') ? 'selected' : ''; ?>>
                         Mecanique
 
                     </option>
 
                     <option value="Mathématiques"
                     >
+                        <?php echo ($filiere === 'Mathématiques') ? 'selected' : ''; ?>>
                         Mathématiques
+
+                    </option>
+
+                    <option value="Physique/Chimie"
+                    >
+                        <?php echo ($filiere === 'Physique/Chimie') ? 'selected' : ''; ?>>
+                        Physique/Chimie
 
                     </option>
 
                 </select>
 
                 <label for="email">Email:</label>
-                <input type="text" name="email" id="email"  placeholder="ex:email@gmail.com">
+                 <input type="text" name="email" id="email" value="<?php echo $email; ?>" placeholder="ex:email@gmail.com">
 
 
                 <label for="mtv">Motivation:</label>
             
-                <textarea name="motivation" id="mtv" rows="6"  ></textarea>
+                <textarea name="motivation" id="mtv" rows="6"  ><?php echo $motivation;?></textarea>
 
                 <label for="reglement">J'ai lu et j'accepte le règlement du club</label>
-                <input type="checkbox" name="reglement" id="reglement" value="1">
+               <input type="checkbox" name="reglement" id="reglement" value="1" <?php echo $reglement?"checked":'';?>>
 
                 <button type="submit"> Envoyer ma candidature</button>
 
